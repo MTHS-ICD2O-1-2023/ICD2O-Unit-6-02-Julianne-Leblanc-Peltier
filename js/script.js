@@ -12,6 +12,6 @@ function bigCookie() {
   } else {
     localStorage.cookiesClicked = 1
   }
-  document.getElementById("amount-of-cookies").innerHTML = "Cookies clicked: " + cookiesClicked
+  document.getElementById("amount-of-cookies").innerHTML = "Cookies clicked: " + localStorage.cookiesClicked
 }
 

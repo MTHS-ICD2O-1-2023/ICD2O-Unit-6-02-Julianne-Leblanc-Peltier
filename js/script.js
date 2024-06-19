@@ -28,7 +28,7 @@ function updateCookieCount() {
 }
 
 function cookieClicked() {
-  cookieCount += 1
+  cookieCount ++
   localStorage.cookieCount = cookieCount
   document.getElementById("amount-of-cookies").innerHTML = "You have: " + cookieCount + " cookies"
   console.log(localStorage.cookieCount)

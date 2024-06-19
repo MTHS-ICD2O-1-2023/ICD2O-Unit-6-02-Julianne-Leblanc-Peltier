@@ -15,11 +15,6 @@ body {
   margin: 20px auto;
 }
 
-.test {
-  background-color: rgb(0 0 0);
-  width: 40px;
-}
-
 .content {
   padding: 1%;
 }
@@ -36,8 +31,6 @@ body {
   clear: both;
 }
 
-button {
-  background-image: url(/images/cookie.jpeg);
-  width: 500px;
-  height: 500px;
+img {
+  width: 400px;
 }

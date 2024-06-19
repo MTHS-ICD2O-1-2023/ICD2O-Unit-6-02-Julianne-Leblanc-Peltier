@@ -3,15 +3,33 @@
 // Created by: Julianne Leblanc-Peltier
 // Created on: June 2024
 // This file contains the JS functions for index.html
+"use strict"
 
-let cookiesClicked = 0
-
-function bigCookie() {
-  if (localStorage.cookiesClicked) {
-    localStorage.cookiesClicked = Number(localStorage.cookiesClicked) +1
-  } else {
-    localStorage.cookiesClicked = 1
-  }
-  document.getElementById("amount-of-cookies").innerHTML = "Cookies clicked: " + localStorage.cookiesClicked
+/**
+ * Check service worker.
+ */
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register("/ICD2O-Unit-6-02-Julianne-Leblanc-Peltier/sw.js", {
+    scope: "/ICD2O-Unit-6-02-Julianne-Leblanc-Peltier/",
+  })
 }
 
+let cookieCount = 0
+
+function updateCookieCount() {
+  // save to local storage
+  console.log(localStorage.cookieCount)
+  if (localStorage.cookieCount) {
+    cookieCount = Number(localStorage.cookieCount)
+  } else {
+    localStorage.cookieCount = cookieCount
+  }
+  document.getElementById("amount-of-cookies").innerHTML = "You have: " + cookieCount + " cookies"
+}
+
+function cookieClicked() {
+  cookieCount += 1
+  localStorage.cookieCount = cookieCount
+  document.getElementById("amount-of-cookies").innerHTML = "You have: " + cookieCount + " cookies"
+  console.log(localStorage.cookieCount)
+}

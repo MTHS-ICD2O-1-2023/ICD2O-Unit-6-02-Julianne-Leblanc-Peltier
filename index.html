@@ -13,9 +13,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#FFFFFF" />
   <title>Cookie Clicker, in JS</title>
+  <link rel="canonical" href="https://mths-icd2o-1-2023.github.io/ICD2O-Unit-6-02-Julianne-Leblanc-Peltier" />
 </head>
-<body>
+<body onload="updateCookieCount()">
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <script src="./js/script.js"></script>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -31,18 +33,18 @@
             <h6>
               Click the cookie and watch as the counter goes up!
             </h6>
-              <!-- Accent-colored raised button with ripple -->
-              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-                type="button" onclick="myButtonClicked()">
-                Done
-              </button>
-            </form>
-            <br />
-            <p>Cookie score:<div id="amount-of-cookies"></div></p>
+            <br/>
           </div>
         </div>
         <div class="column">
-          <button id="bigCookie" onclick="bigCookie()" type="button"></button>
+          <div class="innerbody">
+            <form action="#">
+              <button id="cookie-clicked" onclick="cookieClicked()" type="button">
+                <img src="images/cookie.jpeg" alt="cookie image">
+              </button>
+              <div id="amount-of-cookies"></div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
